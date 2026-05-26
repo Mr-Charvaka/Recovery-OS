@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Drives View - RECOVERY_OS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1a1c1c",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary": "#5e5e5e",
+                        "on-primary-container": "#848484",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#646464",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "outline": "#7e7576",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#838484",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#e3e2e2",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#474747",
+                        "primary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "xl": "64px",
+                        "lg": "32px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #ffffff; /* Override background to pure white as requested */
+            color: #000000;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for minimalism */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+            border-left: 1px solid #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="font-body-md text-primary flex h-screen overflow-hidden antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col gap-0 h-screen w-64 border-r border-primary rounded-none bg-surface-container-lowest">
+<div class="px-md py-lg border-b border-primary">
+<h1 class="font-headline-md text-headline-md text-primary uppercase tracking-tight">RECOVERY_CONSOLE</h1>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-sm">v4.0.2_STABLE</p>
+</div>
+<div class="flex-1 flex flex-col pt-md">
+<!-- DASHBOARD -->
+<a class="flex items-center gap-md text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none group cursor-pointer" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-md text-label-md uppercase">DASHBOARD</span>
+</a>
+<!-- SCAN_DRIVE - ACTIVE -->
+<a class="flex items-center gap-md bg-primary text-on-primary px-md py-sm border-none transition-none group cursor-pointer" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-md text-label-md uppercase">SCAN_DRIVE</span>
+</a>
+<!-- FILE_VAULT -->
+<a class="flex items-center gap-md text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none group cursor-pointer" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md uppercase">FILE_VAULT</span>
+</a>
+<!-- JOURNAL -->
+<a class="flex items-center gap-md text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none group cursor-pointer" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-label-md text-label-md uppercase">JOURNAL</span>
+</a>
+<!-- SYSTEM_REPORTS -->
+<a class="flex items-center gap-md text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none group cursor-pointer" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md uppercase">SYSTEM_REPORTS</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-screen overflow-hidden bg-surface-container-lowest">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-lg h-16 w-full border-b border-primary bg-surface-container-lowest">
+<div class="flex items-center gap-md">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-bold text-primary uppercase tracking-tight">RECOVERY_OS</span>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex gap-sm">
+<button class="p-xs text-secondary hover:bg-primary hover:text-on-primary transition-colors duration-75 cursor-crosshair border border-transparent hover:border-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-xs text-secondary hover:bg-primary hover:text-on-primary transition-colors duration-75 cursor-crosshair border border-transparent hover:border-primary">
+<span class="material-symbols-outlined">power_settings_new</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
+<div class="max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-xl border-b border-primary pb-md flex justify-between items-end">
+<div>
+<h2 class="font-display text-headline-lg-mobile md:text-headline-lg uppercase text-primary tracking-tight">SELECT TARGET DRIVE</h2>
+<p class="font-body-md text-body-md text-secondary mt-sm max-w-2xl">Identify the volume for analysis. Ensure target media is mounted before initializing scan protocol.</p>
+</div>
+<div class="hidden md:flex items-center gap-sm">
+<span class="font-label-sm text-label-sm uppercase border border-primary px-sm py-xs">SYSTEM_ONLINE</span>
+</div>
+</div>
+<!-- Drives Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg mb-xl">
+<!-- Drive Card 1: Internal NVMe -->
+<div class="border border-primary bg-surface-container-lowest p-lg hover:border-[2px] transition-all duration-75 cursor-crosshair flex flex-col h-full group relative">
+<div class="absolute top-sm right-sm">
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-sm py-xs uppercase">PRIMARY</span>
+</div>
+<div class="flex items-start gap-md mb-lg">
+<span class="material-symbols-outlined text-[32px]">hard_drive</span>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase">INT_NVME_SSD</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">/dev/nvme0n1</p>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between font-label-sm text-label-sm uppercase mb-xs">
+<span>CAPACITY</span>
+<span>1.0 TB</span>
+</div>
+<div class="w-full h-md border border-primary bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-primary w-[80%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm uppercase mt-xs text-secondary">
+<span>200 GB FREE</span>
+<span>APFS</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-primary/20 flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex-1 border border-primary bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">QUICK_SCAN</button>
+<button class="flex-1 bg-primary text-on-primary border border-primary hover:bg-surface-container-lowest hover:text-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">DEEP_SCAN</button>
+</div>
+</div>
+<!-- Drive Card 2: External SSD -->
+<div class="border border-primary bg-surface-container-lowest p-lg hover:border-[2px] transition-all duration-75 cursor-crosshair flex flex-col h-full group">
+<div class="flex items-start gap-md mb-lg">
+<span class="material-symbols-outlined text-[32px]">usb</span>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase">EXT_SDSK_PRO</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">/dev/disk2s1</p>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between font-label-sm text-label-sm uppercase mb-xs">
+<span>CAPACITY</span>
+<span>2.0 TB</span>
+</div>
+<div class="w-full h-md border border-primary bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-primary w-[15%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm uppercase mt-xs text-secondary">
+<span>1.7 TB FREE</span>
+<span>exFAT</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-primary/20 flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex-1 border border-primary bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">QUICK_SCAN</button>
+<button class="flex-1 bg-primary text-on-primary border border-primary hover:bg-surface-container-lowest hover:text-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">DEEP_SCAN</button>
+</div>
+</div>
+<!-- Drive Card 3: SD Card -->
+<div class="border border-primary bg-surface-container-lowest p-lg hover:border-[2px] transition-all duration-75 cursor-crosshair flex flex-col h-full group">
+<div class="flex items-start gap-md mb-lg">
+<span class="material-symbols-outlined text-[32px]">sd_storage</span>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase">GENERIC_SD_XC</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">/dev/disk3</p>
+</div>
+</div>
+<div class="mt-auto">
+<div class="flex justify-between font-label-sm text-label-sm uppercase mb-xs">
+<span>CAPACITY</span>
+<span>64 GB</span>
+</div>
+<div class="w-full h-md border border-primary bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-primary w-[98%]"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm uppercase mt-xs text-secondary">
+<span class="text-error">1.2 GB FREE</span>
+<span>FAT32</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-primary/20 flex gap-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="flex-1 border border-primary bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">QUICK_SCAN</button>
+<button class="flex-1 bg-primary text-on-primary border border-primary hover:bg-surface-container-lowest hover:text-primary py-sm font-label-sm text-label-sm uppercase text-center transition-colors">DEEP_SCAN</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-lg py-md w-full border-t border-primary bg-surface-container-lowest mt-auto">
+<span class="font-label-sm text-label-sm uppercase text-primary">© 2024 NULL_LOGIC RECOVERY SYSTEMS. ALL RIGHTS RESERVED.</span>
+<div class="hidden md:flex gap-md">
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline cursor-pointer" href="#">PRIVACY_POLICY</a>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline cursor-pointer" href="#">LEGAL_NOTICE</a>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline cursor-pointer" href="#">SYSTEM_LOGS</a>
+</div>
+</footer>
+</main>
+</body></html>

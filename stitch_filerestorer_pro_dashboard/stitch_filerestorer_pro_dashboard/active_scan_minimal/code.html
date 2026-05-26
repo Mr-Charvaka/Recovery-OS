@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Active Scan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "background": "#f9f9f9",
+                "error": "#ba1a1a",
+                "on-primary-container": "#848484",
+                "secondary": "#5e5e5e",
+                "surface-container-low": "#f3f3f4",
+                "on-background": "#1a1c1c",
+                "on-error": "#ffffff",
+                "surface-bright": "#f9f9f9",
+                "primary-fixed-dim": "#c6c6c6",
+                "surface-variant": "#e2e2e2",
+                "surface-container-high": "#e8e8e8",
+                "error-container": "#ffdad6",
+                "surface-container": "#eeeeee",
+                "on-secondary-fixed": "#1b1c1c",
+                "secondary-fixed-dim": "#c7c6c6",
+                "tertiary": "#000000",
+                "inverse-on-surface": "#f0f1f1",
+                "on-secondary-container": "#646464",
+                "surface-container-lowest": "#ffffff",
+                "primary": "#000000",
+                "on-secondary-fixed-variant": "#464747",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e2e2e2",
+                "on-primary": "#ffffff",
+                "surface-dim": "#dadada",
+                "tertiary-container": "#1a1c1c",
+                "tertiary-fixed": "#e2e2e2",
+                "on-surface": "#1a1c1c",
+                "on-tertiary": "#ffffff",
+                "primary-container": "#1b1b1b",
+                "surface-tint": "#5e5e5e",
+                "inverse-surface": "#2f3131",
+                "on-secondary": "#ffffff",
+                "on-tertiary-container": "#838484",
+                "on-surface-variant": "#4c4546",
+                "on-primary-fixed": "#1b1b1b",
+                "outline": "#7e7576",
+                "on-primary-fixed-variant": "#474747",
+                "surface": "#f9f9f9",
+                "secondary-container": "#e3e2e2",
+                "on-tertiary-fixed": "#1a1c1c",
+                "secondary-fixed": "#e3e2e2",
+                "on-tertiary-fixed-variant": "#454747",
+                "inverse-primary": "#c6c6c6",
+                "tertiary-fixed-dim": "#c6c6c6",
+                "outline-variant": "#cfc4c5",
+                "primary-fixed": "#e2e2e2"
+        },
+        "borderRadius": {
+                "DEFAULT": "0px",
+                "lg": "0px",
+                "xl": "0px",
+                "full": "0px"
+        },
+        "spacing": {
+                "sm": "8px",
+                "md": "16px",
+                "margin-desktop": "48px",
+                "margin-mobile": "16px",
+                "container-max": "1280px",
+                "xl": "64px",
+                "xs": "4px",
+                "lg": "32px",
+                "gutter": "24px",
+                "unit": "4px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "20px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+  /* Base structural enforcement */
+  * { border-radius: 0 !important; }
+  .collapsed-border-grid {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+  .collapsed-border-grid > div {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+</style>
+</head>
+<body class="bg-surface-container-lowest text-primary font-body-md min-h-screen flex flex-col antialiased selection:bg-primary selection:text-surface-container-lowest">
+<!-- Minimal Header for Focused View -->
+<header class="flex items-center px-margin-mobile md:px-margin-desktop py-md border-b border-primary bg-surface-container-lowest sticky top-0 z-10">
+<button aria-label="Go back" class="flex items-center justify-center p-xs mr-md hover:bg-primary hover:text-surface-container-lowest transition-colors border border-transparent hover:border-primary">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md tracking-tight uppercase">Active Scan</h1>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center py-xl px-margin-mobile md:px-margin-desktop">
+<div class="w-full max-w-3xl flex flex-col gap-xl">
+<!-- Primary Progress Block -->
+<section class="flex flex-col gap-md">
+<div class="flex justify-between items-end border-b border-primary pb-xs">
+<h2 class="font-headline-lg-mobile md:font-headline-lg tracking-tight">SCANNING DRIVE C:</h2>
+<span class="font-display text-4xl">68%</span>
+</div>
+<!-- Thick, structural progress bar -->
+<div class="h-16 w-full border border-primary bg-surface-container-lowest p-[2px]">
+<div class="h-full bg-primary transition-all duration-500 ease-in-out relative" style="width: 68%;">
+<div class="absolute right-2 top-1/2 -translate-y-1/2 text-surface-container-lowest font-label-sm uppercase tracking-widest">Running</div>
+</div>
+</div>
+</section>
+<!-- Structural Metrics Grid (Collapsed Borders) -->
+<section class="collapsed-border-grid grid grid-cols-1 md:grid-cols-3 bg-surface-container-lowest">
+<div class="p-lg flex flex-col items-center justify-center text-center gap-xs">
+<span class="font-headline-lg tracking-tighter">1.2 GB/s</span>
+<span class="font-label-sm uppercase text-secondary tracking-widest">Transfer Speed</span>
+</div>
+<div class="p-lg flex flex-col items-center justify-center text-center gap-xs">
+<span class="font-headline-lg tracking-tighter">45.2M</span>
+<span class="font-label-sm uppercase text-secondary tracking-widest">Sectors Analyzed</span>
+</div>
+<div class="p-lg flex flex-col items-center justify-center text-center gap-xs">
+<span class="font-headline-lg tracking-tighter">12,345</span>
+<span class="font-label-sm uppercase text-secondary tracking-widest">Objects Found</span>
+</div>
+</section>
+<!-- Live Categories List -->
+<section class="flex flex-col border border-primary p-lg gap-md">
+<h3 class="font-label-sm uppercase tracking-widest border-b border-primary pb-sm mb-sm">Live Categorization</h3>
+<div class="flex flex-col gap-sm">
+<!-- Category Row -->
+<div class="flex items-center gap-md">
+<span class="w-32 font-label-md uppercase">Images</span>
+<div class="flex-grow h-2 border border-primary bg-surface-container-lowest flex items-stretch">
+<div class="bg-primary" style="width: 45%;"></div>
+</div>
+<span class="w-16 text-right font-label-md">4,200</span>
+</div>
+<!-- Category Row -->
+<div class="flex items-center gap-md">
+<span class="w-32 font-label-md uppercase">Documents</span>
+<div class="flex-grow h-2 border border-primary bg-surface-container-lowest flex items-stretch">
+<div class="bg-primary" style="width: 80%;"></div>
+</div>
+<span class="w-16 text-right font-label-md">8,150</span>
+</div>
+<!-- Category Row -->
+<div class="flex items-center gap-md">
+<span class="w-32 font-label-md uppercase">System</span>
+<div class="flex-grow h-2 border border-primary bg-surface-container-lowest flex items-stretch">
+<div class="bg-primary" style="width: 5%;"></div>
+</div>
+<span class="w-16 text-right font-label-md">120</span>
+</div>
+<!-- Category Row -->
+<div class="flex items-center gap-md">
+<span class="w-32 font-label-md uppercase text-secondary">Unknown</span>
+<div class="flex-grow h-2 border border-secondary bg-surface-container-lowest flex items-stretch">
+<div class="bg-secondary" style="width: 2%;"></div>
+</div>
+<span class="w-16 text-right font-label-md text-secondary">25</span>
+</div>
+</div>
+</section>
+<!-- Action Area -->
+<section class="flex flex-col sm:flex-row gap-md justify-end mt-lg">
+<button class="px-xl py-sm bg-surface-container-lowest text-primary border border-primary font-label-sm uppercase tracking-widest hover:bg-primary hover:text-surface-container-lowest transition-colors min-w-[160px]">
+          Cancel
+        </button>
+<button class="px-xl py-sm bg-primary text-surface-container-lowest border border-primary font-label-sm uppercase tracking-widest hover:bg-surface-container-lowest hover:text-primary transition-colors min-w-[160px]">
+          Pause
+        </button>
+</section>
+</div>
+</main>
+</body></html>

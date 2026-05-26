@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>System Settings - Monochrome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#1a1c1c",
+                        "surface-container-low": "#f3f3f4",
+                        "secondary": "#5e5e5e",
+                        "on-primary-container": "#848484",
+                        "background": "#f9f9f9",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f9f9f9",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary-container": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#464747",
+                        "primary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#646464",
+                        "tertiary": "#000000",
+                        "inverse-on-surface": "#f0f1f1",
+                        "surface-container": "#eeeeee",
+                        "secondary-fixed-dim": "#c7c6c6",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-surface": "#2f3131",
+                        "primary-container": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "outline": "#7e7576",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#838484",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "secondary-container": "#e3e2e2",
+                        "surface": "#f9f9f9",
+                        "on-primary-fixed-variant": "#474747",
+                        "primary-fixed": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0rem", // Enforcing sharp corners for this style
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "0rem"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "xl": "64px",
+                        "lg": "32px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "48px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f9f9f9; color: #000000; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Custom Toggle Style */
+        .mono-toggle-input:checked + .mono-toggle-bg .mono-toggle-slider {
+            transform: translateX(1.5rem);
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="flex h-screen w-full overflow-hidden bg-surface font-body-md text-primary">
+<!-- SideNavBar (Hidden on mobile) -->
+<aside class="hidden md:flex flex-col gap-0 h-screen w-64 border-r border-primary bg-surface flex-shrink-0">
+<div class="p-lg border-b border-primary">
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight uppercase">RECOVERY_CONSOLE</h1>
+<p class="font-label-sm text-label-sm text-secondary mt-xs uppercase">v4.0.2_STABLE</p>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<a class="block text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined align-middle mr-sm">grid_view</span>DASHBOARD
+            </a>
+<a class="block text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined align-middle mr-sm">search</span>SCAN_DRIVE
+            </a>
+<a class="block text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined align-middle mr-sm">inventory_2</span>FILE_VAULT
+            </a>
+<a class="block text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined align-middle mr-sm">history_edu</span>JOURNAL
+            </a>
+<a class="block text-primary px-md py-sm border-b border-primary/10 hover:bg-secondary-container transition-none font-label-md text-label-md uppercase" href="#">
+<span class="material-symbols-outlined align-middle mr-sm">analytics</span>SYSTEM_REPORTS
+            </a>
+</nav>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex flex-col flex-1 h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-lg h-16 w-full border-b border-primary bg-surface flex-shrink-0">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight uppercase">
+                RECOVERY_OS
+            </div>
+<div class="flex items-center gap-md text-primary">
+<button class="hover:bg-primary hover:text-on-primary transition-colors duration-75 p-xs cursor-crosshair border border-transparent hover:border-primary">
+<span class="material-symbols-outlined fill-icon">settings</span>
+</button>
+<button class="hover:bg-primary hover:text-on-primary transition-colors duration-75 p-xs cursor-crosshair border border-transparent hover:border-primary">
+<span class="material-symbols-outlined">power_settings_new</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas -->
+<main class="flex-1 overflow-y-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Page Header -->
+<div class="mb-xl border-b border-primary pb-md">
+<h2 class="font-display text-display text-primary tracking-tight uppercase">System Settings</h2>
+<p class="font-body-lg text-body-lg text-secondary mt-sm max-w-2xl">Configure local environment variables, security protocols, and visual thresholds.</p>
+</div>
+<!-- Settings Layout (Single Column) -->
+<div class="flex flex-col gap-xl">
+<!-- Form Section: Input Fields -->
+<section class="border border-primary p-lg bg-surface">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-lg uppercase border-b border-primary pb-sm">Network Configuration</h3>
+<div class="flex flex-col gap-lg max-w-3xl">
+<!-- Input Group -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest" for="ip_address">Primary IP Address</label>
+<input class="w-full h-12 px-md border border-primary bg-surface font-body-md text-body-md text-primary focus:outline-none focus:border-[2px] transition-none rounded-none placeholder-secondary" id="ip_address" type="text" value="192.168.1.254"/>
+</div>
+<!-- Input Group -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest" for="gateway">Subnet Gateway</label>
+<input class="w-full h-12 px-md border border-primary bg-surface font-body-md text-body-md text-primary focus:outline-none focus:border-[2px] transition-none rounded-none placeholder-secondary" id="gateway" type="text" value="255.255.255.0"/>
+</div>
+<!-- Select Group (styled as input) -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm text-primary uppercase tracking-widest" for="dns_server">Preferred DNS</label>
+<div class="relative">
+<select class="w-full h-12 px-md border border-primary bg-surface font-body-md text-body-md text-primary appearance-none focus:outline-none focus:border-[2px] transition-none rounded-none cursor-pointer" id="dns_server">
+<option>Cloudflare (1.1.1.1)</option>
+<option>Google (8.8.8.8)</option>
+<option>Localhost (127.0.0.1)</option>
+</select>
+<span class="material-symbols-outlined absolute right-md top-1/2 -translate-y-1/2 pointer-events-none text-primary">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Form Section: Toggles -->
+<section class="border border-primary p-lg bg-surface">
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-lg uppercase border-b border-primary pb-sm">Security Protocols</h3>
+<div class="flex flex-col gap-0 border border-primary border-b-0">
+<!-- Toggle Item 1 -->
+<div class="flex justify-between items-center p-md border-b border-primary hover:bg-surface-container-low transition-colors duration-75">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary uppercase">Strict Mode</h4>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">Enforce strict data validation on all outgoing packets.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 ml-lg">
+<input checked="" class="sr-only mono-toggle-input" type="checkbox"/>
+<div class="w-[3.25rem] h-6 border border-primary bg-surface mono-toggle-bg relative">
+<div class="mono-toggle-slider absolute top-[1px] left-[1px] w-[20px] h-[20px] bg-surface border border-primary transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+</div>
+<!-- Toggle Item 2 -->
+<div class="flex justify-between items-center p-md border-b border-primary hover:bg-surface-container-low transition-colors duration-75">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary uppercase">Telemetry Analytics</h4>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">Send anonymous usage data to central servers.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 ml-lg">
+<input class="sr-only mono-toggle-input" type="checkbox"/>
+<div class="w-[3.25rem] h-6 border border-primary bg-surface mono-toggle-bg relative">
+<div class="mono-toggle-slider absolute top-[1px] left-[1px] w-[20px] h-[20px] bg-surface border border-primary transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+</div>
+<!-- Toggle Item 3 -->
+<div class="flex justify-between items-center p-md border-b border-primary hover:bg-surface-container-low transition-colors duration-75">
+<div>
+<h4 class="font-headline-md text-headline-md text-primary uppercase">Auto-Purge Logs</h4>
+<p class="font-label-sm text-label-sm text-secondary uppercase mt-xs">Delete system journals older than 30 days.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0 ml-lg">
+<input checked="" class="sr-only mono-toggle-input" type="checkbox"/>
+<div class="w-[3.25rem] h-6 border border-primary bg-surface mono-toggle-bg relative">
+<div class="mono-toggle-slider absolute top-[1px] left-[1px] w-[20px] h-[20px] bg-surface border border-primary transition-transform duration-200 ease-in-out"></div>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row justify-end gap-md mt-lg">
+<button class="h-12 px-xl border border-primary bg-surface text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors duration-75 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface">
+                            Revert Changes
+                        </button>
+<button class="h-12 px-xl border border-primary bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface hover:text-primary transition-colors duration-75 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface">
+                            Save Configuration
+                        </button>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="flex justify-between items-center px-lg py-md w-full border-t border-primary bg-surface mt-xl flex-col md:flex-row gap-sm">
+<div class="font-label-sm text-label-sm uppercase text-secondary">
+                    © 2024 NULL_LOGIC RECOVERY SYSTEMS. ALL RIGHTS RESERVED.
+                </div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline transition-colors" href="#">PRIVACY_POLICY</a>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline transition-colors" href="#">LEGAL_NOTICE</a>
+<a class="font-label-sm text-label-sm uppercase text-secondary hover:text-primary underline transition-colors" href="#">SYSTEM_LOGS</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>
