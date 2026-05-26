@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: recovery-postgres
+    environment:
+      POSTGRES_DB: recoverydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - recovery-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: recovery-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - recovery-network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: recovery-prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - recovery-network
+
+volumes:
+  pgdata:
+  redisdata:
+
+networks:
+  recovery-network:
+    driver: bridge
