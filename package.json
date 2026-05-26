@@ -1,0 +1,33 @@
+{
+  "name": "filerestorer-pro",
+  "version": "1.0.0",
+  "description": "Professional Data Recovery Desktop Utility",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"tsc -w -p tsconfig.electron.json\" \"wait-on http://localhost:5173 && electron .\"",
+    "build:frontend": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build:native": "cd native && napi build --release --platform",
+    "build": "npm run build:native && npm run build:frontend && npm run build:electron"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.16.0",
+    "@tailwindcss/forms": "^0.5.11",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "electron": "^28.2.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "wait-on": "^7.2.0"
+  }
+}
