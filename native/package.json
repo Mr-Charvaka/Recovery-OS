@@ -1,0 +1,14 @@
+{
+  "name": "filerestorer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "filerestorer",
+    "triples": {
+      "defaults": true,
+      "additional": []
+    }
+  },
+  "license": "MIT"
+}
