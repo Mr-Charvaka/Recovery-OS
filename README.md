@@ -1,12 +1,12 @@
-# FileRestorer Pro
+# Recovery Os
 
-FileRestorer Pro is a forensic-grade, hybrid-stack desktop utility designed for raw disk sector carving, structural filesystem metadata analysis (NTFS, FAT, exFAT, EXT4), and secure fragmentation reassembly.
+Recovery Os is a forensic-grade, hybrid-stack desktop utility designed for raw disk sector carving, structural filesystem metadata analysis (NTFS, FAT, exFAT, EXT4), and secure fragmentation reassembly.
 
 It combines a high-performance **Vite/React frontend** running inside **Electron**, a native **Rust/C systems worker** for direct disk I/O operations, and a **Spring Boot enterprise server** for relational persistence and metric aggregation.
 
 ---
 
-## 🏗️ Architecture Overview
+## 🏗️ Architecture Overviewf
 
 The application is split into four distinct layers:
 
