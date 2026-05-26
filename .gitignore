@@ -1,0 +1,23 @@
+node_modules/
+dist/
+dist-electron/
+target/
+data/
+*.node
+*.db
+*.log
+mock_drive.raw
+.env*
+.DS_Store
+.idea/
+.vscode/
+out/
+temp/
+scratch/
+brain/
+*.raw
+apache-maven-3.9.6/
+
+# Large Prometheus binaries
+docker/prometheus.zip
+docker/prometheus-2.53.0.windows-amd64/
